@@ -9,16 +9,16 @@ import javax.persistence.Id;
 public class EtatDeclaration {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long etat_declaration_id;
     private String libelle;
     private String code;
 
     public Long getId() {
-        return id;
+        return etat_declaration_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.etat_declaration_id = id;
     }
 
     public String getLibelle() {

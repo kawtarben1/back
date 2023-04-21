@@ -2,23 +2,32 @@ package com.example.demo2.bean;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 public class Comptable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long comptable_id;
     private String cin;
     private String nom;
     private String prenom;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "categorie_comptable_id")
     private CategorieComptable categorieComptable;
 
+    @OneToMany(mappedBy = "comptableDeclarant", cascade = CascadeType.ALL)
+    private List<DemandeDeclaration> comptableDeclarants;
+
+    @OneToMany(mappedBy = "comptableVerifiant", cascade = CascadeType.ALL)
+    private List<DemandeDeclaration> comptableVerifiants;
+
     public Long getId() {
-        return id;
+        return comptable_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.comptable_id = id;
     }
 
     public String getCin() {

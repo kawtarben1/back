@@ -1,24 +1,34 @@
 package com.example.demo2.bean;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
 public class DeclarationIRdetailles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long declarationir_detailles_id;
     private String code;
-    @ManyToOne
-    private Employe employe;
-    @ManyToOne
-    private DeclarationIR declarationIR;
     private Double salaireEmployeNet;
     private Double salaireEmployeBrute;
     private Double montantIR;
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "tauxir_id")
     private TauxIR tauxIR;
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "demande_declaration_id")
     private DemandeDeclaration demandeDeclaration;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "employe_id")
+    private Employe employe;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "declarationir_id")
+    private DeclarationIR declarationIR;
 
 
     public DeclarationIR getDeclarationIR() {
@@ -38,11 +48,11 @@ public class DeclarationIRdetailles {
     }
 
     public Long getId() {
-        return id;
+        return declarationir_detailles_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.declarationir_detailles_id = id;
     }
 
     public Employe getEmploye() {

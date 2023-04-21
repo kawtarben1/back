@@ -1,16 +1,20 @@
 package com.example.demo2.bean;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class TauxIR {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long tauxir_id;
     private double pourcentage;
     private double salaireMin;
     private Double salaireMax;
     private String libelle;
+
+    @OneToMany(mappedBy = "tauxIR", cascade = CascadeType.ALL)
+    private List<DeclarationIRdetailles> declarationIRdetailles;
 
     public Double getSalaireMax() {
         return salaireMax;
@@ -29,11 +33,11 @@ public class TauxIR {
     }
 
     public Long getId() {
-        return id;
+        return tauxir_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.tauxir_id = id;
     }
 
     public double getPourcentage() {

@@ -1,24 +1,25 @@
 package com.example.demo2.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class TypeFacture {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private Long id;
+    private Long type_facture_id;
     private String libelle;
     private String code;
 
+    @OneToMany(mappedBy = "typeFacture", cascade = CascadeType.ALL)
+    private List<DeclarationFacture> declarationFactures;
+
     public Long getId() {
-        return id;
+        return type_facture_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.type_facture_id = id;
     }
 
     public String getLibelle() {

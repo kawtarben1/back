@@ -9,26 +9,30 @@ import java.util.Date;
 public class DeclarationFacture {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long declaration_facture_id;
     private String ref;
-    @ManyToOne
-    private DemandeDeclaration demandeDeclaration;
     private Double montantTTC;
     private Double tva;
     private Double montantHT;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateFacture;
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "type_facture_id")
     private TypeFacture typeFacture;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "demande_declaration_id")
+    private DemandeDeclaration demandeDeclaration;
 
 
 
     public Long getId() {
-        return id;
+        return declaration_facture_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.declaration_facture_id = id;
     }
 
     public DemandeDeclaration getDemandeDeclaration() {

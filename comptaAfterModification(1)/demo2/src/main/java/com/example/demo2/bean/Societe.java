@@ -1,24 +1,30 @@
 package com.example.demo2.bean;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Societe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long societe_id;
     private String ice;
     private String libelle;
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "categorie_societe_id")
     private CategorieSociete categorieSociete;
+
+    @OneToMany(mappedBy = "societe", cascade = CascadeType.ALL)
+    private List<DemandeDeclaration> demandeDeclarations;
 
     public Long getId() {
 
-        return id;
+        return societe_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.societe_id = id;
     }
 
     public String getIce() {

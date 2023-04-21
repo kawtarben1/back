@@ -1,5 +1,6 @@
 package com.example.demo2.bean;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import java.util.List;
 public class DeclarationIR {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long declarationir_id;
     private String code;
 
     private Double totalTaxe;
@@ -18,15 +19,16 @@ public class DeclarationIR {
     private Double salaireTotalBrute;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
-    @OneToMany
+
+    @OneToMany(mappedBy = "declarationIR", cascade = CascadeType.ALL)
     private List<DeclarationIRdetailles> declarationIRdetailles;
 
     public Long getId() {
-        return id;
+        return declarationir_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.declarationir_id = id;
     }
 
     public Double getTotalTaxe() {

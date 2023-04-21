@@ -1,26 +1,26 @@
 package com.example.demo2.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long employe_id;
     private String nom;
     private String prenom;
     private String cin;
 
+    @OneToMany(mappedBy = "employe", cascade = CascadeType.ALL)
+    private List<DeclarationIRdetailles> declarationIRdetailles;
 
     public Long getId() {
-        return id;
+        return employe_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.employe_id = id;
     }
 
     public String getNom() {

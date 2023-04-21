@@ -2,16 +2,15 @@ package com.example.demo2.bean;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 public class CategorieDeclaration {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long categorie_declaration_id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateMin;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -20,12 +19,15 @@ public class CategorieDeclaration {
     private Double prixParFac;
     private String libelle;
 
+    @OneToMany(mappedBy = "categorieDeclaration", cascade = CascadeType.ALL)
+    private List<DemandeDeclaration> demandeDeclarations;
+
     public Long getId() {
-        return id;
+        return categorie_declaration_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.categorie_declaration_id = id;
     }
 
     public Date getDateMin() {

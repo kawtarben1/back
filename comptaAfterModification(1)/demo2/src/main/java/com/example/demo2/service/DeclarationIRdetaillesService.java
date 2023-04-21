@@ -3,6 +3,7 @@ package com.example.demo2.service;
 import com.example.demo2.bean.DeclarationIRdetailles;
 import com.example.demo2.bean.TypeFacture;
 import com.example.demo2.dao.DeclarationIRdetaillesDao;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class DeclarationIRdetaillesService {
     @Autowired
     private DeclarationIRdetaillesDao declarationIRdetaillesDao;
 
-    public int save(DeclarationIRdetailles declarationIRdetailles){
+    public int save(  DeclarationIRdetailles declarationIRdetailles){
         if (findByCode(declarationIRdetailles.getCode()) != null) {
             return -1;
         }else{

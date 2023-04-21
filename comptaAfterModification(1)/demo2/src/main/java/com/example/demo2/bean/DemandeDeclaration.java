@@ -5,11 +5,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 public class DemandeDeclaration {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long demande_declaration_id;
     private String ref;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateDeclaration;
@@ -18,21 +20,39 @@ public class DemandeDeclaration {
     private Double totalEsps;
     private Double totalNonEsps;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "categorie_declaration_id")
     private CategorieDeclaration categorieDeclaration;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "comptable_id")
     private Comptable comptableDeclarant;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "comptable_id_1" )
     private Comptable comptableVerifiant;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "societe_id")
     private Societe societe;
 
+    @OneToMany(mappedBy = "demandeDeclaration", cascade = CascadeType.ALL)
+    private List<DeclarationFacture> declarationFactures;
+
+    @OneToMany(mappedBy = "demandeDeclaration", cascade = CascadeType.ALL)
+    private List<DeclarationIRdetailles> declarationIRdetailles;
+
+    @OneToMany(mappedBy = "demandeDeclaration", cascade = CascadeType.ALL)
+    private List<DemandeDeclarationDetailles> demandeDeclarationDetailles;
+
+    @OneToMany(mappedBy = "demandeDeclaration", cascade = CascadeType.ALL)
+    private List<PaymentDeclaration> paymentDeclarations;
+
+
+
     public Long getId() {
-        return id;
+        return demande_declaration_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.demande_declaration_id = id;
     }
 
     public Date getDateDeclaration() {

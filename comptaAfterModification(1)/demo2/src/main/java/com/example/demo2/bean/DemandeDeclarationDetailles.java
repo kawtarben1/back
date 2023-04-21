@@ -6,19 +6,20 @@ import javax.persistence.*;
 public class DemandeDeclarationDetailles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long demande_declaration_detailles_id;
     private String ref;
     private String pathFichier;
     private String description;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "demande_declaration_id")
     private DemandeDeclaration demandeDeclaration;
 
     public Long getId() {
-        return id;
+        return demande_declaration_detailles_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.demande_declaration_detailles_id = id;
     }
 
     public String getRef() {

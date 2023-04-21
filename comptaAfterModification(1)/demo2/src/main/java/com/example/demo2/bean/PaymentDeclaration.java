@@ -9,23 +9,27 @@ import java.util.Date;
 public class PaymentDeclaration {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long payment_declaration_id;
     private String code;
     private Double montant;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date datePayment;
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "type_payment_id")
     private TypePayment typePayment;
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "demande_declaration_id")
     private DemandeDeclaration demandeDeclaration;
 
 
     public Long getId() {
-        return id;
+        return payment_declaration_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.payment_declaration_id = id;
     }
 
     public Double getMontant() {
