@@ -15,12 +15,12 @@ public class PaymentDeclaration {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date datePayment;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "type_payment_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tp_pym_id",referencedColumnName = "type_payment_id")
     private TypePayment typePayment;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "demande_declaration_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "d_m_dclrt_id",referencedColumnName = "demande_declaration_id")
     private DemandeDeclaration demandeDeclaration;
 
 

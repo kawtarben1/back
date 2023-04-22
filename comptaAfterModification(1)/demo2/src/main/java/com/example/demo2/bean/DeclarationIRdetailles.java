@@ -14,20 +14,20 @@ public class DeclarationIRdetailles {
     private Double salaireEmployeBrute;
     private Double montantIR;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "tauxir_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "txIR_id",referencedColumnName = "tauxir_id")
     private TauxIR tauxIR;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "demande_declaration_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DMD_DCLRT_ID",referencedColumnName = "demande_declaration_id")
     private DemandeDeclaration demandeDeclaration;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "employe_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "EPLY_ID",referencedColumnName = "employe_id")
     private Employe employe;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "declarationir_id")
+    @JoinColumn(name = "DCLRT_IR_ID",referencedColumnName = "declarationir_id")
     private DeclarationIR declarationIR;
 
 

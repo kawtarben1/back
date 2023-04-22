@@ -10,8 +10,8 @@ public class DemandeDeclarationDetailles {
     private String ref;
     private String pathFichier;
     private String description;
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "demande_declaration_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DM_DCLRT_ID",referencedColumnName = "demande_declaration_id")
     private DemandeDeclaration demandeDeclaration;
 
     public Long getId() {

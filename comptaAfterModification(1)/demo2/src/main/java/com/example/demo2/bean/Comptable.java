@@ -12,8 +12,8 @@ public class Comptable {
     private String cin;
     private String nom;
     private String prenom;
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "categorie_comptable_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name ="ctgr_ctbl_id" ,referencedColumnName = "categorie_comptable_id")
     private CategorieComptable categorieComptable;
 
     @OneToMany(mappedBy = "comptableDeclarant", cascade = CascadeType.ALL)

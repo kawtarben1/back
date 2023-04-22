@@ -20,17 +20,17 @@ public class DemandeDeclaration {
     private Double totalEsps;
     private Double totalNonEsps;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "categorie_declaration_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ctgr_dclrt_id",referencedColumnName = "categorie_declaration_id")
     private CategorieDeclaration categorieDeclaration;
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "comptable_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ctbl_id",referencedColumnName = "comptable_id")
     private Comptable comptableDeclarant;
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "comptable_id_1" )
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ctbl_vrf",referencedColumnName = "comptable_id" )
     private Comptable comptableVerifiant;
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "societe_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sct_id",referencedColumnName = "societe_id")
     private Societe societe;
 
     @OneToMany(mappedBy = "demandeDeclaration", cascade = CascadeType.ALL)

@@ -17,12 +17,12 @@ public class DeclarationFacture {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateFacture;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "type_facture_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tp_fctr_id",referencedColumnName = "type_facture_id")
     private TypeFacture typeFacture;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "demande_declaration_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "dmd_dclrt_id",referencedColumnName = "demande_declaration_id")
     private DemandeDeclaration demandeDeclaration;
 
 

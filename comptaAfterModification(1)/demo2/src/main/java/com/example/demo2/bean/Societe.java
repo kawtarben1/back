@@ -11,8 +11,8 @@ public class Societe {
     private String ice;
     private String libelle;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "categorie_societe_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ctgr_sct_id",referencedColumnName = "categorie_societe_id")
     private CategorieSociete categorieSociete;
 
     @OneToMany(mappedBy = "societe", cascade = CascadeType.ALL)
