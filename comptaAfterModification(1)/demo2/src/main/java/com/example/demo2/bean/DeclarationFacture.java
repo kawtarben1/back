@@ -90,5 +90,13 @@ public class DeclarationFacture {
     public void setRef(String ref) {
         this.ref = ref;
     }
+
+    public Long getDeclaration_facture_id() {
+        return declaration_facture_id;
+    }
+
+    public void setDeclaration_facture_id(Long declaration_facture_id) {
+        this.declaration_facture_id = declaration_facture_id;
+    }
 }
 

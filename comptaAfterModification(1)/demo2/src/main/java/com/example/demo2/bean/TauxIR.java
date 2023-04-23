@@ -55,4 +55,20 @@ public class TauxIR {
     public void setLibelle(String libelle) {
         this.libelle = libelle;
     }
+
+    public Long getTauxir_id() {
+        return tauxir_id;
+    }
+
+    public void setTauxir_id(Long tauxir_id) {
+        this.tauxir_id = tauxir_id;
+    }
+
+    public List<DeclarationIRdetailles> getDeclarationIRdetailles() {
+        return declarationIRdetailles;
+    }
+
+    public void setDeclarationIRdetailles(List<DeclarationIRdetailles> declarationIRdetailles) {
+        this.declarationIRdetailles = declarationIRdetailles;
+    }
 }

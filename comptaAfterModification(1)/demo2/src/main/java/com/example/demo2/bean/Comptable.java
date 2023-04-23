@@ -61,4 +61,28 @@ public class Comptable {
     public void setCategorieComptable(CategorieComptable categorieComptable) {
         this.categorieComptable = categorieComptable;
     }
+
+    public Long getComptable_id() {
+        return comptable_id;
+    }
+
+    public void setComptable_id(Long comptable_id) {
+        this.comptable_id = comptable_id;
+    }
+
+    public List<DemandeDeclaration> getComptableDeclarants() {
+        return comptableDeclarants;
+    }
+
+    public void setComptableDeclarants(List<DemandeDeclaration> comptableDeclarants) {
+        this.comptableDeclarants = comptableDeclarants;
+    }
+
+    public List<DemandeDeclaration> getComptableVerifiants() {
+        return comptableVerifiants;
+    }
+
+    public void setComptableVerifiants(List<DemandeDeclaration> comptableVerifiants) {
+        this.comptableVerifiants = comptableVerifiants;
+    }
 }

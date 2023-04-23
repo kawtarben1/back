@@ -69,4 +69,20 @@ public class CategorieDeclaration {
     public void setLibelle(String libelle) {
         this.libelle = libelle;
     }
+
+    public Long getCategorie_declaration_id() {
+        return categorie_declaration_id;
+    }
+
+    public void setCategorie_declaration_id(Long categorie_declaration_id) {
+        this.categorie_declaration_id = categorie_declaration_id;
+    }
+
+    public List<DemandeDeclaration> getDemandeDeclarations() {
+        return demandeDeclarations;
+    }
+
+    public void setDemandeDeclarations(List<DemandeDeclaration> demandeDeclarations) {
+        this.demandeDeclarations = demandeDeclarations;
+    }
 }

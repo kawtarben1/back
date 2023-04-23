@@ -79,5 +79,11 @@ public class DeclarationIR {
         this.code = code;
     }
 
+    public Long getDeclarationir_id() {
+        return declarationir_id;
+    }
 
+    public void setDeclarationir_id(Long declarationir_id) {
+        this.declarationir_id = declarationir_id;
+    }
 }

@@ -46,4 +46,20 @@ public class Employe {
     public void setCin(String cin) {
         this.cin = cin;
     }
+
+    public Long getEmploye_id() {
+        return employe_id;
+    }
+
+    public void setEmploye_id(Long employe_id) {
+        this.employe_id = employe_id;
+    }
+
+    public List<DeclarationIRdetailles> getDeclarationIRdetailles() {
+        return declarationIRdetailles;
+    }
+
+    public void setDeclarationIRdetailles(List<DeclarationIRdetailles> declarationIRdetailles) {
+        this.declarationIRdetailles = declarationIRdetailles;
+    }
 }

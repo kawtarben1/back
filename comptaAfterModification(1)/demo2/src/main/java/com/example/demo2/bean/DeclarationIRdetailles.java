@@ -94,4 +94,20 @@ public class DeclarationIRdetailles {
     public void setMontantIR(Double montantIR) {
         this.montantIR = montantIR;
     }
+
+    public Long getDeclarationir_detailles_id() {
+        return declarationir_detailles_id;
+    }
+
+    public void setDeclarationir_detailles_id(Long declarationir_detailles_id) {
+        this.declarationir_detailles_id = declarationir_detailles_id;
+    }
+
+    public DemandeDeclaration getDemandeDeclaration() {
+        return demandeDeclaration;
+    }
+
+    public void setDemandeDeclaration(DemandeDeclaration demandeDeclaration) {
+        this.demandeDeclaration = demandeDeclaration;
+    }
 }

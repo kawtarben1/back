@@ -45,6 +45,9 @@ public class DemandeDeclaration {
     @OneToMany(mappedBy = "demandeDeclaration", cascade = CascadeType.ALL)
     private List<PaymentDeclaration> paymentDeclarations;
 
+    @OneToMany(mappedBy = "demandeDeclaration", cascade = CascadeType.ALL)
+    private List<EtatDeclaration> etatDeclarations;
+
 
 
     public Long getId() {
@@ -138,4 +141,53 @@ public class DemandeDeclaration {
     public void setSociete(Societe societe) {
         this.societe = societe;
     }
+
+    public Long getDemande_declaration_id() {
+        return demande_declaration_id;
+    }
+
+    public void setDemande_declaration_id(Long demande_declaration_id) {
+        this.demande_declaration_id = demande_declaration_id;
+    }
+
+    public List<DeclarationFacture> getDeclarationFactures() {
+        return declarationFactures;
+    }
+
+    public void setDeclarationFactures(List<DeclarationFacture> declarationFactures) {
+        this.declarationFactures = declarationFactures;
+    }
+
+    public List<DeclarationIRdetailles> getDeclarationIRdetailles() {
+        return declarationIRdetailles;
+    }
+
+    public void setDeclarationIRdetailles(List<DeclarationIRdetailles> declarationIRdetailles) {
+        this.declarationIRdetailles = declarationIRdetailles;
+    }
+
+    public List<DemandeDeclarationDetailles> getDemandeDeclarationDetailles() {
+        return demandeDeclarationDetailles;
+    }
+
+    public void setDemandeDeclarationDetailles(List<DemandeDeclarationDetailles> demandeDeclarationDetailles) {
+        this.demandeDeclarationDetailles = demandeDeclarationDetailles;
+    }
+
+    public List<PaymentDeclaration> getPaymentDeclarations() {
+        return paymentDeclarations;
+    }
+
+    public void setPaymentDeclarations(List<PaymentDeclaration> paymentDeclarations) {
+        this.paymentDeclarations = paymentDeclarations;
+    }
+
+    public List<EtatDeclaration> getEtatDeclarations() {
+        return etatDeclarations;
+    }
+
+    public void setEtatDeclarations(List<EtatDeclaration> etatDeclarations) {
+        this.etatDeclarations = etatDeclarations;
+    }
+
 }

@@ -74,4 +74,11 @@ public class PaymentDeclaration {
         this.code = code;
     }
 
+    public Long getPayment_declaration_id() {
+        return payment_declaration_id;
+    }
+
+    public void setPayment_declaration_id(Long payment_declaration_id) {
+        this.payment_declaration_id = payment_declaration_id;
+    }
 }

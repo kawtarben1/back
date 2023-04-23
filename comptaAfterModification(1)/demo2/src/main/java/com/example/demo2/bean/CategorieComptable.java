@@ -36,4 +36,20 @@ public class CategorieComptable {
     public void setCode(String code) {
         this.code = code;
     }
+
+    public Long getCategorie_comptable_id() {
+        return categorie_comptable_id;
+    }
+
+    public void setCategorie_comptable_id(Long categorie_comptable_id) {
+        this.categorie_comptable_id = categorie_comptable_id;
+    }
+
+    public List<Comptable> getComptables() {
+        return comptables;
+    }
+
+    public void setComptables(List<Comptable> comptables) {
+        this.comptables = comptables;
+    }
 }

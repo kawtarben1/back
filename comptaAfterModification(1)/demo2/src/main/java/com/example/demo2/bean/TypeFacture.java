@@ -37,4 +37,20 @@ public class TypeFacture {
     public void setCode(String code) {
         this.code = code;
     }
+
+    public Long getType_facture_id() {
+        return type_facture_id;
+    }
+
+    public void setType_facture_id(Long type_facture_id) {
+        this.type_facture_id = type_facture_id;
+    }
+
+    public List<DeclarationFacture> getDeclarationFactures() {
+        return declarationFactures;
+    }
+
+    public void setDeclarationFactures(List<DeclarationFacture> declarationFactures) {
+        this.declarationFactures = declarationFactures;
+    }
 }

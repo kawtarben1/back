@@ -38,4 +38,20 @@ public class CategorieSociete {
     public void setCode(String code) {
         this.code = code;
     }
+
+    public Long getCategorie_societe_id() {
+        return categorie_societe_id;
+    }
+
+    public void setCategorie_societe_id(Long categorie_societe_id) {
+        this.categorie_societe_id = categorie_societe_id;
+    }
+
+    public List<Societe> getSocietes() {
+        return societes;
+    }
+
+    public void setSocietes(List<Societe> societes) {
+        this.societes = societes;
+    }
 }

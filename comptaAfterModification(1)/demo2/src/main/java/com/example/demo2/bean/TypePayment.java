@@ -37,4 +37,20 @@ public class TypePayment {
     public void setCode(String code) {
         this.code = code;
     }
+
+    public Long getType_payment_id() {
+        return type_payment_id;
+    }
+
+    public void setType_payment_id(Long type_payment_id) {
+        this.type_payment_id = type_payment_id;
+    }
+
+    public List<PaymentDeclaration> getPaymentDeclarations() {
+        return paymentDeclarations;
+    }
+
+    public void setPaymentDeclarations(List<PaymentDeclaration> paymentDeclarations) {
+        this.paymentDeclarations = paymentDeclarations;
+    }
 }

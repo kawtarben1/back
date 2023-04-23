@@ -50,4 +50,20 @@ public class Societe {
     public void setCategorieSociete(CategorieSociete categorieSociete) {
         this.categorieSociete = categorieSociete;
     }
+
+    public Long getSociete_id() {
+        return societe_id;
+    }
+
+    public void setSociete_id(Long societe_id) {
+        this.societe_id = societe_id;
+    }
+
+    public List<DemandeDeclaration> getDemandeDeclarations() {
+        return demandeDeclarations;
+    }
+
+    public void setDemandeDeclarations(List<DemandeDeclaration> demandeDeclarations) {
+        this.demandeDeclarations = demandeDeclarations;
+    }
 }

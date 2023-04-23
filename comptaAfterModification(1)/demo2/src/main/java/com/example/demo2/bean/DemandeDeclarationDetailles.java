@@ -53,4 +53,12 @@ public class DemandeDeclarationDetailles {
     public void setDemandeDeclaration(DemandeDeclaration demandeDeclaration) {
         this.demandeDeclaration = demandeDeclaration;
     }
+
+    public Long getDemande_declaration_detailles_id() {
+        return demande_declaration_detailles_id;
+    }
+
+    public void setDemande_declaration_detailles_id(Long demande_declaration_detailles_id) {
+        this.demande_declaration_detailles_id = demande_declaration_detailles_id;
+    }
 }
